@@ -19,7 +19,7 @@ router.get("/", (req, res) => {
     if (error) {
       // logging in the server, just to know that error occured
       console.log("Error connecting to database");
-      console.log(err);
+      console.log(error);
       // graceful handling the error
       return res.render("index.ejs", {
         users: [],
@@ -83,7 +83,7 @@ router.post("/new", async (req, res) => {
       // logging in the server, just to know that error occured
       // gracefully handling the errors
       console.log("Error connecting to database");
-      console.log(err);
+      console.log(error);
       return res.redirect("/");
     }
     // if there was no error, continue with the connection object
